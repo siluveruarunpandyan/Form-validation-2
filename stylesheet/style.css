@@ -14,6 +14,7 @@
   --clr-white: #fff;
   --max-width: 1140px;
   --transition: all 0.5s ease;
+  
 }
 
 /* pseudo elements in css */
@@ -25,7 +26,7 @@ html {
 
 body {
   font-family: 'Poppins', sans-serif;
-  /*background-color:#a32c54;*/
+  background-color: linear-gradient(#e66465, #9198e5) ;
 }
 
 /* global css */
@@ -63,3 +64,28 @@ li {
   color: #fff;
   border: 2px solid #1c2042;
 }
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.card{
+    min-width: 24rem;
+    width: 30rem;
+    margin:0 auto ;
+    padding: 0.5rem 1rem 3rem 1rem;
+    background: linear-gradient(#e66465, #9198e5); ;
+    color: var(--clr-white);
+    border-radius: 10px ;
+}
+
+.title{
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0.5rem;
+
+}
+
