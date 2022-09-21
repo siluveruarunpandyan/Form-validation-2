@@ -73,8 +73,8 @@ li {
 }
 
 .card{
-    min-width: 24rem;
-    width: 30rem;
+    max-width: 30rem;
+    width: 24rem;
     margin:0 auto ;
     padding: 0.5rem 1rem 3rem 1rem;
     background: linear-gradient(#e66465, #9198e5); ;
@@ -86,6 +86,78 @@ li {
     font-size: 1.5rem;
     text-align: center;
     margin: 0.5rem;
+
+}
+.submit-form{
+    margin-top: 0.5rem;
+    
+    
+}
+
+.form-control label,
+.form-control input{
+    display: block;
+    width: 100%;
+    margin-top: 0.5;
+    margin-bottom: 0.5rem;
+
+}
+.form-control label{
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.form-control input{
+    padding: 1rem 1.25rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
+
+
+.form-control.error input{
+    border-color: red;
+}
+.form-control.succuss input{
+    border-color: green;
+}
+
+small{
+    color: red;
+    font-size: 1.1rem;
+    margin-bottom: 0.1rem;
+    visibility: hidden;
+    
+}
+.form-control.error small{
+    visibility: visible;
+}
+
+
+.btn-light{
+    background-color: var(--clr-white);
+    border: 2px solid var(--clr-white);
+    color: var(--clr-dark);
+    transition: var(--transition);
+}
+
+.btn-light:hover{
+    background-color: transparent ;
+    color: var(--clr-white);
+}
+
+.btn-block{
+    display: block;
+    width: 100%;
+    margin: 1.5rem auto;
+}
+
+@media screen and (min-width:768px){
+    .card{
+        width: 23rem;
+    }
 
 }
 
