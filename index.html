@@ -18,34 +18,40 @@
 <body>
     <div class="container row">
         <div class="card">
-            <h1 class="title">Register Here</h1>
-            <form class="submit-form">
-                <div class="form-control">
+            <h1 class="title" id="title">Register Here</h1>
+            <div id="contain"></div>
+            <form class="submit-form" id="form">
+                <div class="form-control  ">
                     <label for="Username">Username</label>
-                    <input type="text" id="username" name="username" placeholder="Enter your name"/>
+                    <input type="text" id="Username" name="Username" placeholder="Enter your name"/>
+                    <small class="small">Username is required</small>
                 </div>
-                <small class="small">Username is required</small>
+                
                 <div class="form-control">
-                    <label for="Emali">Emali address</label>
-                    <input type="text" id="Emali" name="Emali" placeholder="Enter your Emali"/>
+                    <label for="emali">email address</label>
+                    <input type="text" id="emali" name="email" placeholder="Enter your emali"/>
+                    <small class="small">email  is required</small>
                 </div>
-                <small class="small">email is required</small>
-                <div class="form-control">
+                
+                <div class="form-control ">
                     <label for="mobile">mobile number</label>
                     <input type="number" id="mobile" name="mobile" placeholder="Enter your mobile number"/>
+                    <small class="small">phone number is required</small>
                 </div>
-                <small class="small">phone number is required</small>
-                <div class="form-control">
+                
+                <div class="form-control ">
                     <label for="new-password">password</label>
                     <input type="text" id="new-password" name="new-password" placeholder="Enter your password"/>
+                    <small class="small">password is required</small>
                 </div>
-                <small class="small">password is required</small>
-                <div class="form-control">
+                
+                <div class="form-control ">
                     <label for="confirm-password">confirm-password</label>
                     <input type="" id="confirm-password" name="confirm-password" placeholder="confirm your password"/>
+                    <small class="small">confirm password is required</small>
                 </div>
-                <small class="small">confirm password is required</small>
-                <button class="btn btn-light btn-block">Submit</button>
+                
+                <button class="btn btn-light btn-block " type="submit">Submit</button>
 
 
             </form>
