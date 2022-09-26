@@ -114,16 +114,23 @@ li {
     font-weight: 600;
     border-radius: 10px;
     outline: none;
-    border: none;
+    /*border: none;*/
 }
 
+.form-control input:focus{
+  outline: 0;
+  border-color: aqua;
+}
 
-.form-control.error input{
-    border-color: red;
+.form-control.error  input{
+  border-color:rgb(255, 23, 23);
+  border-width: 3px;
 }
-.form-control.success input{
-    border-color: green;
+
+.form-control.success  input{
+  border-color: rgb(9, 226, 9);
 }
+
 
 .form-control small{
     color: red;
