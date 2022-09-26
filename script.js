@@ -1,6 +1,6 @@
 'use strict';
 
-//console.log(document.getElementById('title').textContent);
+//console.log(document.getElementById('email'));
 // console.log(document.getElementById('title').textContent);
 // console.log(document.getElementById('title').textContent = 'fill the form');
 // console.log(document.getElementById('title').style.color = '#12cc15');
@@ -24,7 +24,83 @@ const mobileEl = document.getElementById('mobile');
 const newpasswordEl = document.getElementById('new-password');
 const confirmpasswordEl = document.getElementById('confirm-password');
 
-//functions
+
+
+const inputElArray = [
+    UsernameEl,
+    emailEl,
+    mobileEl,
+    newpasswordEl,
+    confirmpasswordEl
+];
+
+const showError = function(el, message){
+    const formControlEl = el.parentElement;
+        formControlEl.className = 'form-control error';
+        const smallEl = formControlEl.querySelector('small');
+        smallEl.textContent = message;
+};
+
+const showSuccess = function (el) {
+    const formControlEl = el.parentElement;
+    formControlEl.className = 'form-control success';
+};
+
+const checkRequired = function (arr) {
+    for(const el of arr){
+        if(el.value === ''){
+           showError(el, `${el.name}is required`);
+        }else{
+           showSuccess(el);
+        }
+       
+    }
+};
+
+
+
+const checkLength = function (el, min, max) {
+    if (el.value.length < min){
+       showError(el, `${el.name}should have ${min} characters`);
+    }else if(el.value.length > max){
+        showError(el, `${el.name} should not be more than ${max} characters`);
+
+    }else{
+        showSuccess(el);
+    }
+};
+
+
+const passwordMatch = function (elOne, elTwo) {
+    if(elOne.value === '' || elTwo.value === '') {
+        showError(elOne, 'new password is mandatory');
+        showError(elTwo, 'confirm password is mandatory')
+    }else{
+        if(elOne.value === elTwo.value){
+             showSuccess(elOne);
+        showSuccess(elTwo);
+    }else{
+        showError(elOne, 'password do not match');
+        //showError(elTwo 'password do not match')
+    }
+    }
+        
+};
+
+
+formEl.addEventListener('submit', function (e){
+    e.preventDefault();
+    checkRequired(inputElArray);
+    checkLength(UsernameEl, 5, 12);
+    checkLength(emailEl,5,25);
+    checkLength(mobileEl,10,10);
+    checkLength(newpasswordEl,8,15);
+    passwordMatch(newpasswordEl, confirmpasswordEl);
+    });
+
+    
+
+// //functions
 
 
 
@@ -85,55 +161,3 @@ const confirmpasswordEl = document.getElementById('confirm-password');
 // }
 // });
 
-// const inputElArray = [
-//     UsernameEl,
-// emailEl, 
-//      mobileEl, 
-//      newpasswordEl, 
-//      confirmpasswordEl];
-
-
-// const checkRequired = function(arr){
-//     for (const El of arr){
-//         if(El.value === ''){
-//             const formcontrolEl = El.parentElement;
-//             formcontrolEl.classList.add('error');
-//         }else{
-//             const formcontrolEl = El.parentElement;
-//             formcontrolEl.classList.add('succuss');
-//         }
-//     }
-// };
-// // formEl.addEventListener('submit', function(event){
-// //     //     event.preventDefault();
-// formEl.addEventListener('submit',  function(e){
-//     console.log(El);
-//     e.preventdefault(); 
-//     checkRequired(inputElArray);
-// }); 
-    
-// const inputElArray = [
-//         UsernameEl,
-//     emailEl, 
-//          mobileEl, 
-//          newpasswordEl, 
-//          confirmpasswordEl];
-const inputElArray = [UsernameEl, emailEl,mobileEl,newpasswordEl,confirmpasswordEl];
-
-const checkRequired = function(arr){
-    for(const el of arr){
-       
-        if(el.value === ''){
-            const formcontrolEl = UsernameEl.parentElement;
-            formcontrolEl.classlist.add('error');
-        }else{
-            const formcontrol = UsernameEl.parentElement;
-            formcontrolEl.classlist.add('succuss');
-        }
-    }
-};
-
-formEl.addEventListener('submit', function(event){
-    event.preventDefault();
-    checkRequired(inputElArray);
-})

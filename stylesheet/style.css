@@ -121,7 +121,7 @@ li {
 .form-control.error input{
     border-color: red;
 }
-.form-control.succuss input{
+.form-control.success input{
     border-color: green;
 }
 
